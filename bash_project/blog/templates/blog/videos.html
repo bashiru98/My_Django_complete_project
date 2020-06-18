@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% load static  %}
+
+{% block content %}
+{% for vid in vids %}
+<div class="videos">
+<video controls preload="metadata" style=" width:800px;  height:500px;">
+    <source src="{{vid.video_file.url}}" type="video/mp4">
+</video>
+<span>{{vid.discription}}</span>
+</div>
+{% endfor %}
+{% endblock content %}
